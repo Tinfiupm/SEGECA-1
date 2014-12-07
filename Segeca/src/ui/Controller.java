@@ -475,7 +475,7 @@ public class Controller {
         
         String valoracion = valoracionPC.getText(); //JTextField correspondiente
         
-        if (valoracion == null) {
+        if (valoracion.equals("")) {
             JOptionPane.showMessageDialog(null, "Debe introducir una valoracion para la PC.", "Error", JOptionPane.ERROR_MESSAGE);
             return -1;
         } else {
@@ -491,7 +491,8 @@ public class Controller {
 
     /* Requisito 3.5 */
     // Método que modifica el estado de una PC
-    public static int modEstadoPC() {
+    // Interfaz: ES NECESARIO QUE NOS PASÉIS EL CÓDIGO DE LA PC QUE QUERÍA MODIFICAR EL USUARIO
+    public static int modEstadoPC(int codPC) {
         //ComboBox que debe mostrar todos los estados posibles de la PC
         JComboBox EstadosPC = null;
         
@@ -502,6 +503,7 @@ public class Controller {
             return -1;
         }
         Pc pc = new Pc();
+        pc.setCodPC(codPC);
         pc.setEstado(estado);
 
         // Método que SOLO modifica el estado de una PC

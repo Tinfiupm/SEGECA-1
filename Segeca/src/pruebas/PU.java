@@ -179,6 +179,26 @@ public class PU {
         listaCCCs.addItem("CCC_1");
         
         System.out.println("La función ha devuelto el valor de: " + PcAgendaCCC(4));
+        
+        // Prueba 15
+        System.out.println("**** Prueba 15: Petición de cambio sin descripción****");
+        descripPC.setText("");        
+        
+        System.out.println("La función ha devuelto el valor de: " + altaPC());
+        
+        // Prueba 16
+        System.out.println("**** Prueba 16: Valoración de petición de cambio****");
+        JTextField valPC = new JTextField(); // SUSTITUIR POR EL TEXTFIELD FINAL
+        valPC.setText("En estudio");      
+        
+        System.out.println("La función ha devuelto el valor de: " + valorarPC(4));
+        
+        // Prueba 17
+        System.out.println("**** Prueba 17: Modificación de estado de una petición de cambio****");
+        JComboBox estadosPcs = new JComboBox(); //SUSTITUIR POR EL COMBOBOX FINAL
+        estadosPcs.setSelectedIndex(-1);
+        
+        System.out.println("La función ha devuelto el valor de: " + modEstadoPC(4));
     }
 
     	public static void PU_ConectorBD(){
